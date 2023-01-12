@@ -1,0 +1,12 @@
+[Unit]
+Description=Stop Rplidar motor
+
+[Service]
+After=rplidar.service
+ExecStart=bash -c "source /home/ubuntu/catkin_ws/devel/setup.bash ; rosservice call /stop_motor"
+KillMode=process
+Restart=on-failure
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target

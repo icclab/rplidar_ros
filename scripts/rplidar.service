@@ -1,0 +1,11 @@
+[Unit]
+Description=Rplidar ROS node
+
+[Service]
+ExecStart=bash -c "source /home/ubuntu/catkin_ws/devel/setup.bash ; /opt/ros/noetic/bin/roslaunch rplidar_ros rplidar.launch"
+KillMode=process
+Restart=no
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target
